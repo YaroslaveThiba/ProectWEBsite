@@ -1,0 +1,228 @@
+<html>
+<head><title>Тест из 10ти вопросов по физике</title>
+  <style>
+p, span, input, td {
+ font-size:24px;
+ face:"Verdana";
+}
+button{
+    font-size:18px;
+    face:"Verdana";
+}
+#vo {
+    color:green;
+}
+#nvo {
+    color:red;
+}
+#ot {
+    color:blue;
+}
+table.text  {
+    width:  40%; /* Ширина таблицы */
+    border-spacing: 0; /* Расстояние между ячейками */
+   }
+table.text td {
+
+    vertical-align: top; /* Выравнивание по верхнему краю */
+   }
+td.rightcol { /* Правая ячейка */
+    text-align: right; /* Выравнивание по правому краю */
+   }
+
+  </style>
+</head>
+<font face="Arial">
+  <body style=" font:Arial 50px bold"  background="/static/gvgv.jpg" >
+<center>
+  <h1><font face="Verdana" color="black" size="20">Выполните задания теста:</font></h1>
+  <div id="vopros1" style="display:block;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте</font></p>
+    <img src="/static/mat1.jpg">
+    <p><font face="Verdana" color="black" size="5">14*5= <input type="text" id="z_1"></font></p>
+  </div>
+  <div id="vopros2" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте</font></p>
+    <img src="/static/mat2.jpg">
+    <p><font face="Verdana" color="black" size="5">6*6/6= <input type="text" id="z_2"></font></p>
+  </div>
+  <div id="vopros3" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте </font></p>
+    <img src="/static/mat3.jpg">
+    <p><font face="Verdana" color="black" size="5">(4*5)*(5+2)= <input type="text" id="z_3"></font></p>
+  </div>
+  <div id="vopros4" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте</font></p>
+    <img src="/static/mat4.jpg">
+    <p><font face="Verdana" color="black" size="5">9/9*3*3*6*3*6*6= <input type="text" id="z_4"></font></p>
+  </div>
+  <div id="vopros5" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте</font></p>
+    <img src="/static/mat5.jpg">
+    <p><font face="Verdana" color="black" size="5">6*6/0.5= <input type="text" id="z_5"></font></p>
+  </div>
+  <div id="vopros6" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте</font></p>
+    <img src="/static/math6.jpg">
+    <p><font face="Verdana" color="black" size="5">333*333*0= <input type="text" id="z_6"></font></p>
+  </div>
+  <div id="vopros7" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте</font></p>
+    <img src="/static/math7.jpg">
+    <p><font face="Verdana" color="black" size="5">-3+5= <input type="text" id="z_7"></font></p>
+  </div>
+  <div id="vopros8" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте</font></p>
+    <img src="/static/math8.jpg">
+    <p><font face="Verdana" color="black" size="5">-3*5= <input type="text" id="z_8"></font></p>
+  </div>
+  <div id="vopros9" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте </font></p>
+    <img src="/static/math9.jpg">
+    <p><font face="Verdana" color="black" size="5">9^3= <input type="text" id="z_9"></font></p>
+  </div>
+  <div id="vopros10" style="display:none;">
+    <p><font face="Verdana" color="black" size="8">Посчитайте </font></p>
+    <img src="/static/math10.jpg">
+    <p><font face="Verdana" color="black" size="5">444*55 <input type="text" id="z_10"></font></p>
+  </div>
+
+  <button id="kn_sl" onclick="sled_vopr();"><font color="black" size="5">Следующий вопрос</font></button>
+  <button onclick="proverit();"><font color="red" size="5">Проверить</font></button>
+  <div id="rezultat"></div>
+</center>
+<script>
+function sled_vopr(){
+    if(document.getElementById('vopros9').style.display == "block"){
+        document.getElementById('vopros9').style.display = "none";
+        document.getElementById('vopros10').style.display = "block";
+        document.getElementById('kn_sl').style.display = "none";
+        document.getElementById('kn_pr').style.display = "block";
+    }
+    if(document.getElementById('vopros8').style.display == "block"){
+        document.getElementById('vopros8').style.display = "none";
+        document.getElementById('vopros9').style.display = "block";
+    }
+    if(document.getElementById('vopros7').style.display == "block"){
+        document.getElementById('vopros7').style.display = "none";
+        document.getElementById('vopros8').style.display = "block";
+    }
+    if(document.getElementById('vopros6').style.display == "block"){
+        document.getElementById('vopros6').style.display = "none";
+        document.getElementById('vopros7').style.display = "block";
+    }
+    if(document.getElementById('vopros5').style.display == "block"){
+        document.getElementById('vopros5').style.display = "none";
+        document.getElementById('vopros6').style.display = "block";
+    }
+    if(document.getElementById('vopros4').style.display == "block"){
+        document.getElementById('vopros4').style.display = "none";
+        document.getElementById('vopros5').style.display = "block";
+    }
+    if(document.getElementById('vopros3').style.display == "block"){
+        document.getElementById('vopros3').style.display = "none";
+        document.getElementById('vopros4').style.display = "block";
+
+    }
+    if(document.getElementById('vopros2').style.display == "block"){
+        document.getElementById('vopros2').style.display = "none";
+        document.getElementById('vopros3').style.display = "block";
+
+    }
+    if(document.getElementById('vopros1').style.display == "block"){
+        document.getElementById('vopros1').style.display = "none";
+        document.getElementById('vopros2').style.display = "block";
+    }
+}
+function proverit(){
+pr_otv_zadachi_1 = 70;
+pr_otv_zadachi_2 = 6;
+pr_otv_zadachi_3 = 140;
+pr_otv_zadachi_4 = 5832;
+pr_otv_zadachi_5 = 72;
+pr_otv_zadachi_6 = 0;
+pr_otv_zadachi_7 = 2;
+pr_otv_zadachi_8 = -15;
+pr_otv_zadachi_9 = 729;
+pr_otv_zadachi_10 = 24420;
+otv_uch_1 = document.getElementById('z_1').value;
+otv_uch_2 = document.getElementById('z_2').value;
+otv_uch_3 = document.getElementById('z_3').value;
+otv_uch_4 = document.getElementById('z_4').value;
+otv_uch_5 = document.getElementById('z_5').value;
+otv_uch_6 = document.getElementById('z_6').value;
+otv_uch_7 = document.getElementById('z_7').value;
+otv_uch_8 = document.getElementById('z_8').value;
+otv_uch_9 = document.getElementById('z_9').value;
+otv_uch_10 = document.getElementById('z_10').value;
+ball = 0;
+if(otv_uch_1 == pr_otv_zadachi_1){
+    ball +=1;
+    otveti = "<span id='vo'>Вопрос 1. Вы ответили верно. Ваш ответ: "+otv_uch_1+"</span>";
+} else {
+    otveti = "<span id='nvo'>Вопрос 1. Вы ответили не верно. Ваш ответ: "+otv_uch_1+"</span>";
+}
+if(otv_uch_2 == pr_otv_zadachi_2){
+    ball +=1;
+    otveti += "<br><span id='vo'>Вопрос 2. Вы ответили верно. Ваш ответ: "+otv_uch_2+"</span>";
+} else {
+    otveti += "<br><span id='nvo'>Вопрос 2. Вы ответили не верно. Ваш ответ: "+otv_uch_2+"</span>";
+}
+if(otv_uch_3 == pr_otv_zadachi_3){
+    ball +=1;
+    otveti += "<br><span id='vo'>Вопрос 3. Вы ответили верно. Ваш ответ: "+otv_uch_3+"</span>";
+} else {
+    otveti += "<br><span id='nvo'>Вопрос 3. Вы ответили не верно. Ваш ответ: "+otv_uch_3+"</span>";
+}
+if(otv_uch_4 == pr_otv_zadachi_4){
+    ball +=1;
+    otveti += "<br><span id='vo'>Вопрос 4. Вы ответили верно. Ваш ответ: "+otv_uch_4+"</span>";
+} else {
+    otveti += "<br><span id='nvo'>Вопрос 4. Вы ответили не верно. Ваш ответ: "+otv_uch_4+"</span>";
+}
+if(otv_uch_5 == pr_otv_zadachi_5){
+    ball +=1;
+    otveti2 = "<br><span id='vo'>Вопрос 5. Вы ответили верно. Ваш ответ: "+otv_uch_5+"</span>";
+} else {
+    otveti2 = "<br><span id='nvo'>Вопрос 5. Вы ответили не верно. Ваш ответ: "+otv_uch_5+"</span>";
+}
+if(otv_uch_6 == pr_otv_zadachi_6){
+    ball +=1;
+    otveti2 += "<br><span id='vo'>Вопрос 6. Вы ответили верно. Ваш ответ: "+otv_uch_6+"</span>";
+} else {
+    otveti2 += "<br><span id='nvo'>Вопрос 6. Вы ответили не верно. Ваш ответ: "+otv_uch_6+"</span>";
+}
+if(otv_uch_7 == pr_otv_zadachi_7){
+    ball +=1;
+    otveti2 += "<br><span id='vo'>Вопрос 7. Вы ответили верно. Ваш ответ: "+otv_uch_7+"</span>";
+} else {
+    otveti2 += "<br><span id='nvo'>Вопрос 7. Вы ответили не верно. Ваш ответ: "+otv_uch_7+"</span>";
+}
+if(otv_uch_8 == pr_otv_zadachi_8){
+    ball +=1;
+    otveti2 += "<br><span id='vo'>Вопрос 8. Вы ответили верно. Ваш ответ: "+otv_uch_8+"</span>";
+} else {
+    otveti2 += "<br><span id='nvo'>Вопрос 8. Вы ответили не верно. Ваш ответ: "+otv_uch_8+"</span>";
+}
+if(otv_uch_9 == pr_otv_zadachi_9){
+    ball +=1;
+    otveti2 += "<br><span id='vo'>Вопрос 9. Вы ответили верно. Ваш ответ: "+otv_uch_9+"</span>";
+} else {
+    otveti2 += "<br><span id='nvo'>Вопрос 9. Вы ответили не верно. Ваш ответ: "+otv_uch_9+"</span>";
+}
+if(otv_uch_10 == pr_otv_zadachi_10){
+    ball +=1;
+    otveti2 += "<br><span id='vo'>Вопрос 10. Вы ответили верно. Ваш ответ: "+otv_uch_10+"</span>";
+} else {
+    otveti2 += "<br><span id='nvo'>Вопрос 10. Вы ответили не верно. Ваш ответ: "+otv_uch_10+"</span>";
+}
+vsego_zadach = 10;
+procent_vip = ball/vsego_zadach * 100;
+procent_vip = procent_vip.toFixed();
+document.getElementById('rezultat').innerHTML = "<span id='ot'>Задания выполнены верно на "+procent_vip+"%.</span><br><br>"+otveti+otveti2;
+}
+
+</script>
+</body>
+</font>
+</html>
